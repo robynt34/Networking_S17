@@ -84,7 +84,13 @@ int main(int argc, char* argv[])
         return 2;
     }
 
-    if((numBytes = sendto(socketFileDescriptor, "Hello server", strlen("Hello server"), 0, p->ai_addr, p->ai_addrlen)) == -1)
+    // SENDING FIRST MESSAGE
+    char message[90];
+    strcat(message, "register ");
+    strcat(message, clientName);
+    cout << "ehck" << endl;
+    cout << "DEBUG: message is: " << message << endl;
+    if((numBytes = sendto(socketFileDescriptor, message, strlen(message), 0, p->ai_addr, p->ai_addrlen)) == -1)
     {
         cout << "DEBUG: error on sending message" << endl;
         exit(1);

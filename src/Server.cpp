@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
    	exit(1);
    }
    
-   cout << "recvfrom: " << inet_ntop(client_addr.ss_family, get_in_addr((struct sockaddr *) &client_addr), s, sizeof s) << endl;
+   cout << "recvfrom: " << inet_ntop(client_addr.ss_family, get_in_addr((struct sockaddr *) &client_addr), s, sizeof s) << " port " << portNum << endl;
    cout << "-- packet is " << numbytes << " long" << endl;
    cout << "-- packet contains '" << buffer << "'" << endl;
 
